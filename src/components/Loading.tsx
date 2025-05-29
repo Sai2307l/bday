@@ -1,4 +1,4 @@
-import { Html, useProgress } from '@react-three/drei';
+import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = () => {
   const { progress } = useProgress();
@@ -7,21 +7,58 @@ const CanvasLoader = () => {
       as="div"
       center
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}>
-      <span className="canvas-loader"></span>
-      <p
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <div
         style={{
-          fontSize: 14,
-          color: '#F1F1F1',
-          fontWeight: 800,
-          marginTop: 40,
-        }}>
-        {progress !== 0 ? `${progress.toFixed(2)}%` : 'Loading...'}
-      </p>
+          width: 100,
+          height: 100,
+          borderRadius: "50%",
+          border: "10px solid #F1F1F1",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <p
+          style={{
+            fontSize: 14,
+            color: "#F1F1F1",
+            fontWeight: 800,
+            marginTop: 40,
+          }}
+        >
+          I know Its taking time to load. Please wait and in the meantime, enjoy
+          My stupid picture!
+        </p>
+        <p
+          style={{
+            fontSize: 14,
+            color: "#F1F1F1",
+            fontWeight: 800,
+            marginTop: 40,
+          }}
+        >
+          {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
+        </p>
+        <img
+          src="/public/sorry.jpg"
+          alt="loader"
+          style={{
+            position: "absolute",
+            width: 60,
+            height: 60,
+            top: 20,
+            left: "50%",
+            transform: "translateX(-50%)",
+            pointerEvents: "none",
+          }}
+        />
+      </div>
     </Html>
   );
 };
