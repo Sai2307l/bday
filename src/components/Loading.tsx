@@ -15,8 +15,8 @@ const CanvasLoader = () => {
     >
       <div
         style={{
-          width: 100,
-          height: 100,
+          width: "100vh",
+          height: "100vh",
           borderRadius: "50%",
           border: "10px solid #F1F1F1",
           display: "flex",
@@ -33,7 +33,7 @@ const CanvasLoader = () => {
           }}
         >
           I know Its taking time to load. Please wait and in the meantime, enjoy
-          My stupid picture!
+          the view!
         </p>
         <p
           style={{
@@ -46,12 +46,12 @@ const CanvasLoader = () => {
           {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
         </p>
         <img
-          src="/public/sorry.jpg"
+          src="../../public/sorry.jpg"
           alt="loader"
           style={{
             position: "absolute",
-            width: 60,
-            height: 60,
+            width: 1280,
+            height: 720,
             top: 20,
             left: "50%",
             transform: "translateX(-50%)",
